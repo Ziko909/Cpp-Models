@@ -6,7 +6,7 @@
 /*   By: zaabou <zaabou@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 01:42:02 by zaabou            #+#    #+#             */
-/*   Updated: 2022/11/25 06:28:41 by zaabou           ###   ########.fr       */
+/*   Updated: 2022/11/27 15:06:05 by zaabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,22 @@ void	PhoneBook::show_list(void)
 		std::cout << std::setfill('~') << std::setw(62) << "\n";
 		while (index <= size)
 		{
-			std::cout << std::setfill(' ') << "|" << index << std::setw(14) << "|";
+			std::cout << std::setfill(' ') << "|" <<  std::setw(14) << std::right << index << "|";
 			element = this->list[index - 1].get_info(0);
 			if (element.length() > 10)
-				std::cout << element.substr(0, 9) + "." << std::setw(5) << "|";
+				std::cout << std::setw(14) << std::right << element.substr(0, 9) + "." << "|";
 			else
-				std::cout << element << std::setw(15 - element.length()) << "|";
+				std::cout << std::setw(14) << std::right << element << "|";
 			element = this->list[index - 1].get_info(1);
 			if (element.length() > 10)
-				std::cout << element.substr(0, 9) + "." << std::setw(5) << "|";
+				std::cout << std::setw(14) << std::right << element.substr(0, 9) + "." << "|";
 			else
-				std::cout << element << std::setw(15 - element.length()) << "|";
+				std::cout << std::setw(14) << std::right << element << "|";
 			element = this->list[index - 1].get_info(2);
 			if (element.length() > 10)
-				std::cout << element.substr(0, 9) + "." << std::setw(5) << "|";
+				std::cout << std::setw(14) << std::right << element.substr(0, 9) + "." << "|";
 			else
-				std::cout << element << std::setw(15 - element.length()) << "|";
+				std::cout << std::setw(14) << std::right << element << "|";
 			std::cout << "\n";
 			index++;
 		}
