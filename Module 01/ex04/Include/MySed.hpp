@@ -6,7 +6,7 @@
 /*   By: zaabou <zaabou@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 21:26:55 by zaabou            #+#    #+#             */
-/*   Updated: 2022/12/07 02:40:24 by zaabou           ###   ########.fr       */
+/*   Updated: 2022/12/08 00:53:36 by zaabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class MySed
 		std::string		_tmp;
 		std::string		_line;
 	public:
-		MySed( std::string fin, std::string s1, std::string s2 );
-		~MySed();
+				MySed( std::string fin, std::string s1, std::string s2 );
+				~MySed();
 		void	read_file( void );
 		void	replace_word( void );
 		void	write_to_file( void );
