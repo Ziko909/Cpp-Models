@@ -6,7 +6,7 @@
 /*   By: zaabou <zaabou@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:08:22 by zaabou            #+#    #+#             */
-/*   Updated: 2022/12/22 09:40:46 by zaabou           ###   ########.fr       */
+/*   Updated: 2022/12/22 09:44:44 by zaabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	Allocation(Animal* (&Animals)[10])
 			Animals[i] = new(std::nothrow) Cat;
 		if (Animals[i] == nullptr)
 		{
-			std::cerr << "" << std::endl;
+			std::cerr << "Memory Allocation Failed" << std::endl;
 			exit(EXIT_FAILURE);
 		}
 	}
