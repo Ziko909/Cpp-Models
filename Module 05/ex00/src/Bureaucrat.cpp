@@ -5,7 +5,7 @@ Bureaucrat::Bureaucrat() : mName("none") , mGrade(mLowestGrade)
 	std::cout << "Bureaucrat Has Been Created by The Default Constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : mName(name)
+Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : mName(name)
 {
 	if (grade > mLowestGrade)
 		throw GradeTooLowException();
@@ -15,14 +15,13 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : mName(name)
 	std::cout << "Bureaucrat Has Been Created by The Parameterized Constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat( Bureaucrat const& obj )
+Bureaucrat::Bureaucrat( const Bureaucrat& obj ) : mName(obj.getName())
 {
 	std::cout << "Bureaucrat Has Been Created by The Copy Constructor" << std::endl;
-	if (this != &obj)
-		*this = obj;
+	*this = obj;
 }
 
-Bureaucrat&	Bureaucrat::operator = ( const Bureaucrat &rhs )
+Bureaucrat&	Bureaucrat::operator = ( const Bureaucrat& rhs )
 {
 	if (this != &rhs)
 		this->mGrade = rhs.getGrade();
@@ -38,7 +37,7 @@ std::string	Bureaucrat::getName() const
 {
 	return (this->mName);
 }
-int	Bureaucrat::getGrade() const
+unsigned int	Bureaucrat::getGrade() const
 {
 	return (this->mGrade);
 }
@@ -79,6 +78,6 @@ Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 std::ostream&	operator << (std::ostream& out, const Bureaucrat& Brc)
 {
-	out << Brc.getName() << ", bureaucrat grade " << Brc.getGrade() << std::endl;
+	out << Brc.getName() << ", bureaucrat grade " << Brc.getGrade();
 	return (out);
 }
