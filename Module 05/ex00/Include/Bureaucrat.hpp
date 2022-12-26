@@ -5,14 +5,13 @@
 #define TooHighGrade 0
 #include <iostream>
 #include <exception>
-
 class	Bureaucrat
 {
 	private :
-		const std::string			mName;
-		int							mGrade;
-		static const	int			mLowestGrade = 150;
-		static const	int			mHighestGrade = 1;
+		const std::string	mName;
+		unsigned int		mGrade;
+		static const int	mLowestGrade = 150;
+		static const int	mHighestGrade = 1;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -39,15 +38,15 @@ class	Bureaucrat
 	};
 
 	public	:
-					Bureaucrat ();
-					Bureaucrat ( std::string name, int grade );
-					Bureaucrat ( const Bureaucrat &obj );
-		Bureaucrat&	operator = ( const Bureaucrat &rhs );
-					~Bureaucrat ();
-		std::string	getName() const;
-		int			getGrade() const;
-		void		increaseGrade();
-		void		decreaseGrade();
+						Bureaucrat ();
+						Bureaucrat ( std::string name, unsigned int grade );
+						Bureaucrat ( const Bureaucrat& obj );
+		Bureaucrat&		operator = ( const Bureaucrat& rhs );
+						~Bureaucrat ();
+		std::string		getName() const;
+		unsigned int	getGrade() const;
+		void			increaseGrade();
+		void			decreaseGrade();
 };
 
 std::ostream&	operator << ( std::ostream& out, const Bureaucrat& Brc );
