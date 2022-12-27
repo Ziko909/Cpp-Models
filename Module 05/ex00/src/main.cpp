@@ -6,7 +6,7 @@
 /*   By: zaabou <zaabou@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 04:11:42 by zaabou            #+#    #+#             */
-/*   Updated: 2022/12/26 18:14:05 by zaabou           ###   ########.fr       */
+/*   Updated: 2022/12/27 19:33:29 by zaabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ void	decreaseGrade()
 
 int main()
 {
-	try{
+	try {
 		create_Bureaucrate(TooLowGrade);
 	} catch ( std::exception& e ) {
 		std::cerr << "Exception Has Been Caught : ";
 		std::cerr << e.what() << "\n" << std::endl;
 	}
-	try{
+	try {
 		create_Bureaucrate(TooHighGrade);
 	} catch ( std::exception& e ) {
 		std::cerr << "Exception Has Been Caught : ";
